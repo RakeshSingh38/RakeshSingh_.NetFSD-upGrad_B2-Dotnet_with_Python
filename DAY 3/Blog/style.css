@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f6f6f6;
+}
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    background: #000;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    height: 60px;
+}
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-item:nth-child(1) {
+    margin-right: auto;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.blog-section {
+    padding: 2rem;
+}
+
+.section-title {
+    text-align: center;
+    color: #333;
+}
+
+.blog-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.blog-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in;
+}
+
+.blog-card:hover {
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-out;
+}
+
+.card-image {
+    height: 150px;
+    background: #ddd;
+}
+.card-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-title {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+}
+.blog-desc {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.read-more-button {
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    background: #333;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.read-more-button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        flex-direction: column;
+        background-color: black;
+        background: #000;
+        height: 160px;
+        padding-bottom:20px ;
+    }
+
+    .nav-item:nth-child(1) {
+        margin: auto;
+    }
+}

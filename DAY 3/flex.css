@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f6f6f6;
+}
+
+*{
+    box-sizing: border-box;
+}
+.container {
+    background-color: #000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 40px;
+    height: 60px;
+}
+
+.box {
+    margin-left: 30px;
+    color: #ecf0f1;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    display: block;
+}
+
+.box:hover {
+    color: #3498db;
+    cursor: pointer;
+}
+
+.box:nth-child(1) {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem;
+    max-width: 360px;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: auto;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    border: 3px solid #eee;
+}
+
+.my-name {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.25rem;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.my-role {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.my-bio {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.contact-button {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+}
+
+.contact-button:hover {
+    background-color: #fff;
+    color: #333;
+}
