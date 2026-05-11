@@ -1,0 +1,198 @@
+/**
+ * Employee Management System UI styles
+ * Bootstrap-first with light custom polish.
+ */
+
+body {
+    background-color: #f4f6fb;
+    color: #1e2c43;
+}
+
+#authContainer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(
+        circle at 10% 10%,
+        #3a72ff 0%,
+        #1f3761 55%,
+        #16233f 100%
+    );
+}
+
+.auth-view {
+    width: 100%;
+    max-width: 460px;
+}
+
+.auth-card {
+    border-radius: 1rem;
+    animation: slideUp 0.35s ease-out;
+}
+
+.login-main-icon {
+    font-size: 3rem;
+    color: #0d6efd;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+.contactIcon {
+    width: 56px;
+    height: 56px;
+    color: #0d6efd;
+    margin-bottom: 0.75rem;
+}
+
+.brand-mark {
+    display: inline-flex;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.7rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9f0ff;
+    color: #2a66f5;
+    font-size: 1.25rem;
+}
+
+#appContainer {
+    padding-top: 4.25rem;
+}
+
+.view-container {
+    min-height: calc(100vh - 4.25rem);
+}
+
+.ems-navbar-soft {
+    background-image: linear-gradient(
+        90deg,
+        #1f4f9f 0%,
+        #2558ab 55%,
+        #2a5eb4 100%
+    );
+}
+
+.nav-link.active {
+    border-bottom: 2px solid #7fb0ff;
+}
+
+.kpi-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.45rem 1rem rgba(31, 61, 110, 0.14);
+}
+
+.kpi-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 0.6rem;
+    background-color: #f1f3f9;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.kpi-card .h3 {
+    color: #1f3d6e;
+    line-height: 1;
+}
+
+.kpi-card .small {
+    letter-spacing: 0.04em;
+    font-weight: 600;
+}
+
+#dashboardView .h3 {
+    color: #1f3d6e;
+}
+
+#dashboardView .text-secondary {
+    color: #74849a !important;
+}
+
+#departmentBreakdownContainer .table th {
+    font-size: 0.85rem;
+    color: #31455f;
+    border-bottom-color: #e6edf7;
+}
+
+#departmentBreakdownContainer .table td {
+    font-size: 0.88rem;
+    color: #2f4058;
+    border-bottom-color: #eef2f8;
+}
+
+#departmentBreakdownContainer .progress {
+    background-color: #e2e8f2;
+    border-radius: 999px;
+}
+
+#recentEmployeesContainer .recent-item {
+    border: 0;
+    border-radius: 0.55rem;
+    padding: 0.45rem 0.25rem;
+}
+
+#recentEmployeesContainer .recent-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+}
+
+#recentEmployeesContainer .recent-name {
+    font-size: 0.95rem;
+    color: #1f3047;
+}
+
+#recentEmployeesContainer .recent-role {
+    color: #6f7f95;
+}
+
+#employeeTable .sort-trigger {
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+#employeeTable .sort-trigger:hover,
+#employeeTable .sort-trigger:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+#employeeTable .sort-indicator {
+    font-size: 0.72rem;
+    margin-left: 0.2rem;
+    opacity: 0.95;
+}
+
+.badge-active {
+    background-color: #198754;
+    color: #fff;
+}
+
+.badge-inactive {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
