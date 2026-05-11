@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+
+Mini Product Search App
+
+Scenario:
+
+An e-commerce company needs a mini product search application that filters products dynamically as users type in the search box.
+
+Requirements
+
+Display product list from a predefined array.
+
+Filter products dynamically using input event.
+
+Display "No Results Found" when applicable.
+
+Technical Constraints
+
+Must use DOM manipulation.
+
+Event delegation required.
+
+Code should follow modular structure.
+
+Expectations:
+
+Real-time filtering.
+
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: #fff;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 24px 32px;
+            border-radius: 8px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 8px 12px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        #productList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #productList li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            color: #444;
+        }
+        #productList li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Search for Shoes</h2>
+
+        <input type="text" id="searchInput" placeholder="search products....">
+
+        <ul id="productList">
+
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

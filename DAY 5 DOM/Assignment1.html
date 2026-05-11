@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+A simple webpage should greet users based on the name they enter. 
+This helps beginners understand how JavaScript functions accept parameters and how variables behave inside functions. 
+
+📌 Requirements 
+Create an input box to enter a user’s name. 
+Create a button labeled “Generate Greeting”. 
+When the button is clicked: 
+A JavaScript function should accept the name as a parameter. 
+Display a greeting message like: “Hello, Rahul! Welcome to our website.” 
+Display the greeting inside a <p> element. 
+ 
+🛠️ Technical Constraints 
+Use only vanilla JavaScript (no libraries). 
+Use function keyword (not arrow functions for this task). 
+Use document.getElementById() for DOM manipulation. 
+Variable for the greeting message must be declared inside the function.
+
+-->
+
+<!-- imp        best code i have written till date used my brain alot -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create element</title>
+</head>
+
+<body>
+    <div style="text-align: center;">
+
+        <h1>Display name from input value</h1>
+        <label for="">Name :</label>
+        <input id="name" type="text">
+        <br>
+        <br>
+        <button onclick="greetGreeting(document.getElementById('name').value)">Generate Greeting</button>
+        <br>
+        <br>
+        <p id="print"></p>
+
+        <br>
+    </div>
+</body>
+<script>
+
+
+    function greetGreeting(name) {
+
+        // note     so my issue is that i need to take name as a parameter so what i did is used that parameter to store the name
+        // input value
+
+        // and thats how i got my ans
+        let printName = document.getElementById("print");
+        // name = document.getElementById("name").value;
+        printName.innerText = `Hello ${name}, Welcome to our website`;
+    }
+
+</script>
+
+</html>

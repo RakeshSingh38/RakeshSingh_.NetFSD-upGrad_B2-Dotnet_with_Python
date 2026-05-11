@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Notes</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        height: 100vh;
+        padding: 10%;
+    }
+
+    main textarea {
+        padding: 10px;
+        font-size: 16px;
+        height: 200px;
+        width: 70%;
+        max-height: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    article {
+        margin-top: 10px;
+    }
+
+    article button {
+        padding: 5px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+
+<body>
+    <main>
+
+        <label for="message">Your Message:</label>
+        <br>
+        <br>
+        <textarea id="message" placeholder="Type in here" name="message" rows="5" cols="30">
+
+
+        </textarea>
+
+        <article>
+            <button onclick="saveNote()" id="save">save notes</button>
+            <button onclick="clearNote()" id="clear">clear notes</button>
+        </article>
+
+        <h2 id="output"></h2>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

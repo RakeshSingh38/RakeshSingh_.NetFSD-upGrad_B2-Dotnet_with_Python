@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+A webpage needs to display basic user information stored inside a JavaScript object. 
+📌 Requirements 
+Create a JavaScript object user with properties: 
+name 
+age 
+city 
+Create a function displayUserInfo(userObj): 
+Accepts the object as a parameter. 
+Displays user details in separate <p> elements. 
+A button click should trigger the function. 
+ 
+🛠️ Technical Constraints 
+Object properties must be accessed using dot notation. 
+Function should not use global variables. 
+DOM elements should be updated dynamically.
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create element</title>
+</head>
+
+<body>
+    <div style="text-align: center;">
+
+        <!-- // note    i can pass js variable as a function in this file becoz its a accessibile-->
+        <h1>Display Details from Object</h1>
+        <br>
+        <button onclick="displayUserInfo(user)">Show user info</button>
+        <br>
+        <p id="print"></p>
+        <p id="name"></p>
+        <p id="age"></p>
+        <p id="city"></p>
+        <br>
+    </div>
+</body>
+<script>
+
+    let user = {
+        name: "Rakesh Singh",
+        age: 26,
+        city: "Mumbai"
+    };
+
+    function displayUserInfo(userObj) { 
+        document.getElementById("name").innerText = "Name: " + userObj.name;
+        document.getElementById("age").innerText = "Age: " + userObj.age;
+        document.getElementById("city").innerText = "City: " + userObj.city;
+    }   
+
+</script>
+
+</html>

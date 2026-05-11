@@ -1,0 +1,38 @@
+function getPassword(){
+    let password = localStorage.getItem("password");
+
+    if(password){
+        return password;
+    }
+}
+
+console.log(getPassword())
+
+function getUserData() {
+    let name = localStorage.getItem("name")
+    let email = localStorage.getItem("email")
+
+    if(name && email){
+        document.getElementById("output").innerHTML = `<h1>User Details</h1> \n <h3>Name : ${name} and Email : ${email}</h3>`
+    }
+}
+
+function checkPassword(){
+    let password = document.getElementById("password").value;
+
+    event.preventDefault()
+
+    if(password){
+        if(password == getPassword()){
+            getUserData()
+            window.location.href = "index.html"
+       
+
+            
+        } else {
+            document.getElementById("output").innerHTML = "<h1>Error: Wrong Passowrd!</h1>"
+        }
+    } else {
+        document.getElementById("output").innerHTML = "<h1>Error: PLease Enter Your Password!</h1>"
+    }
+}

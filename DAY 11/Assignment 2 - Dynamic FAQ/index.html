@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+Problem 2 (Level-1): Dynamic FAQ Toggle Section 
+Scenario: 
+A website contains a Frequently Asked Questions (FAQ) section. The company wants answers to appear and disappear when users click on the questions. 
+📌 Requirements 
+• Create at least 5 FAQ questions with hidden answers. 
+• Use jQuery click() event to toggle answers. 
+• Apply slideToggle() or show()/hide() methods. 
+• Highlight the selected question using CSS class manipulation. 
+ 
+🛠️ Technical Constraints 
+• Use only jQuery methods for DOM manipulation. 
+• Use class selectors and ID selectors appropriately. 
+• Avoid inline JavaScript. 
+ 
+Expectations: 
+• Smooth UI interaction. 
+• Proper use of jQuery effects. 
+• Organized HTML structure. 
+ 
+🎯 Learning Outcome 
+• Implement event handling using jQuery. 
+• Use basic jQuery effects. 
+• Practice DOM traversal and manipulation.
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .faq {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            padding: 0 15px;
+        }
+
+        .faq h3 {
+            cursor: pointer;
+            padding: 15px 0;
+            margin: 0;
+            color: #333;
+            user-select: none;
+        }
+
+        .faq h3::after {
+            content: '▼';
+            font-size: 12px;
+            float: right;
+            color: #147ae7;
+        }
+
+        .faq.active h3::after {
+            content: '▲';
+        }
+
+        .faq p {
+            display: none;
+            border-top: 1px solid #eee;
+            margin: 0 0 15px 0;
+            color: #555;
+            padding-top: 10px;
+        }
+
+        .faq.active {
+            border-left: 4px solid #0878ef;
+        }
+
+        .faq.active h3 {
+            color: #0e6cd1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dynamic FAQ Section</h1>
+
+    <div class="faq">
+        <h3>What is the return policy?</h3>
+        <p>Our return policy allows returns within 30 days of purchase</p>
+    </div>
+
+    <div class="faq">
+        <h3>How long does shipping take?</h3>
+        <p>Shipping typically takes 5-7 business days</p>
+    </div>
+
+    <div class="faq">
+        <h3>Do you offer international shipping?</h3>
+        <p>Yes, we ship to select countries worldwide</p>
+    </div>
+
+    <div class="faq">
+        <h3>How can I track my order?</h3>
+        <p>You can track your order using the tracking number provided in your confirmation email</p>
+    </div>
+
+    <div class="faq">
+        <h3>What payment methods do you accept?</h3>
+        <p>We accept Visa, MasterCard, PayPal, and Apple Pay</p>
+    </div>
+
+
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $(".faq h3").click(function () {
+            $(this).next().slideToggle();
+            $(this).parent().toggleClass("active");
+        });
+    });
+</script>
+
+</html>

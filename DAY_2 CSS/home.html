@@ -4,57 +4,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SomeStore</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
     <header>
         <nav class="navbar">
-            <a href="home.html">Home</a>
-            <a href="mens.html">Men's</a>
-            <a href="womens.html">Women's</a>
-            <a href="kids.html">Kid's Section</a>
+            <div class="logo">
+                <a href="home.html">
+                    <h2>Some<span>Store</span></h2>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="home.html">HOME</a>
+                <a href="mens.html">MEN</a>
+                <a href="womens.html">WOMEN</a>
+                <a href="kids.html">KIDS</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products, brands and more">
+                <i class="fas fa-search search-icon"></i>
+            </div>
         </nav>
     </header>
 
-    <section class="prod-section">
-        <h1 class="main-heading">Welcome to Our Some Store</h1>
-        <div style="text-align: center; padding: 10px;">
-            <h2>Shop the Latest Fashion Trends</h2>
-            <p style="font-size: 18px; margin: 0 0;">Browse our collections for Men, Women, and Kids</p>
+    <section class="categories-section">
+        <div class="category-item">
+            <a href="mens.html" class="no-style-link">
+                <div class="cat-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?w=400&h=400&fit=crop"
+                        alt="Men">
+                </div>
+                <span>Men</span>
+            </a>
         </div>
+        <div class="category-item">
+            <a href="womens.html" class="no-style-link">
+                <div class="cat-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=400&fit=crop"
+                        alt="Women">
+                </div>
+                <span>Women</span>
+            </a>
+        </div>
+        <div class="category-item">
+            <a href="kids.html" class="no-style-link">
+                <div class="cat-img-wrapper">
+                    <img src="https://img0.junaroad.com/uiproducts/20536192/pri_175_p-1714045372.jpg" alt="Kids">
+                </div>
+                <span>Kids</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="hero-section">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+            alt="Hero Image" class="hero-bg-img">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>End of Season Sale</h2>
+                <h1>60% - 80% OFF</h1>
+                <p>On Top International Brands</p>
+                <button class="main-btn">Explore Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-container">
+        <h2 class="section-heading">Deals of the Day</h2>
 
         <div class="prod-grid">
             <div class="prod-card">
-                <img src="https://asset20.ckassets.com/thegoodlookbook/wp-content/uploads/sites/2/2024/05/United-Colors-of-Benetton-Mens-Slim-T-Shirt-1024x512.jpg"
-                    alt="Men's Collection">
-                <h3>Men's Collection</h3>
-                <p class="prod-desc">Explore trendy styles</p>
-                <button class="buy-btn"><a href="mens.html" style="color: white; text-decoration: none;">Shop
-                        Men's</a></button>
+                <div class="prod-img">
+                    <img src="https://www.bombayshirts.com/cdn/shop/files/94fcc201-d296-f691-3e87-b6aad0a8f8c3_revise_203_fd1c52f5-0750-4eb8-9dab-ab64176eae9b.jpg?crop=center&height=763&v=1758539846&width=611"
+                        alt="Men's Shirt">
+                    <div class="rating-badge">4.5 <i class="fas fa-star"></i></div>
+                </div>
+                <div class="prod-details">
+                    <h3 class="brand-name">Roadster</h3>
+                    <p class="prod-name">Men Slim Fit Shirt</p>
+                    <div class="price-row">
+                        <span class="current-price">₹649</span>
+                        <span class="original-price">₹1499</span>
+                        <span class="discount">(56% OFF)</span>
+                    </div>
+                </div>
             </div>
 
             <div class="prod-card">
-                <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=400&fit=crop"
-                    alt="Women's Collection">
-                <h3>Women's Collection</h3>
-                <p class="prod-desc">Stylish & Elegant</p>
-                <button class="buy-btn"><a href="womens.html" style="color: white; text-decoration: none;">Shop
-                        Women's</a></button>
+                <div class="prod-img">
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=400&fit=crop"
+                        alt="Women Dress">
+                    <div class="rating-badge">4.2 <i class="fas fa-star"></i></div>
+                </div>
+                <div class="prod-details">
+                    <h3 class="brand-name">Zara</h3>
+                    <p class="prod-name">Women Floral Dress</p>
+                    <div class="price-row">
+                        <span class="current-price">₹1299</span>
+                        <span class="original-price">₹2599</span>
+                        <span class="discount">(50% OFF)</span>
+                    </div>
+                </div>
             </div>
 
             <div class="prod-card">
-                <img src="https://img0.junaroad.com/uiproducts/20536192/pri_175_p-1714045372.jpg" alt="Kids Collection">
-                <h3>Kid's Collection</h3>
-                <p class="prod-desc">Fun & Comfortable</p>
-                <button class="buy-btn"><a href="kids.html" style="color: white; text-decoration: none;">Shop
-                        Kid's</a></button>
+                <div class="prod-img">
+                    <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=400&h=400&fit=crop"
+                        alt="Kids Checks Shirt">
+                    <div class="rating-badge">4.8 <i class="fas fa-star"></i></div>
+                </div>
+                <div class="prod-details">
+                    <h3 class="brand-name">H&M Kids</h3>
+                    <p class="prod-name">Boys Checkered Shirt</p>
+                    <div class="price-row">
+                        <span class="current-price">₹499</span>
+                        <span class="original-price">₹799</span>
+                        <span class="discount">(37% OFF)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prod-card">
+                <div class="prod-img">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20220129/248n/61f45b6af997dd6623475b0d/-473Wx593H-469097250-white-MODEL.jpg" alt="Sneakers">
+                    <div class="rating-badge">4.1 <i class="fas fa-star"></i></div>
+                </div>
+                <div class="prod-details">
+                    <h3 class="brand-name">Nike</h3>
+                    <p class="prod-name">Unisex Sneakers</p>
+                    <div class="price-row">
+                        <span class="current-price">₹2499</span>
+                        <span class="original-price">₹4999</span>
+                        <span class="discount">(50% OFF)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="prod-card">
+                <div class="prod-img">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Headphones">
+                    <div class="rating-badge">4.6 <i class="fas fa-star"></i></div>
+                </div>
+                <div class="prod-details">
+                    <h3 class="brand-name">Sony</h3>
+                    <p class="prod-name">Wireless Headphones</p>
+                    <div class="price-row">
+                        <span class="current-price">₹4999</span>
+                        <span class="original-price">₹9990</span>
+                        <span class="discount">(50% OFF)</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p style="text-align: center;">@ Some Store, All Rights Reserved</p>
+
+        <div class="footer-bottom">
+            <p>@ 2026 SomeStore. All rigths reserved.</p>
+        </div>
     </footer>
 </body>
 

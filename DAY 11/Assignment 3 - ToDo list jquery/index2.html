@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+// note     
+
+<img id="img1" src="photo.jpg" alt="Profile”>
+
+
+$("#img1").attr("src");
+$("#img1").attr("src", "newphoto.jpg");
+<input type="checkbox" id="check1" checked>
+$("#check1").prop("checked");
+$("#check1").prop("checked", true);
+
+
+can you list out the important topics in JQuery.
+
+$("#id")
+$(".class")
+$("p")
+$("[type='text']")
+$("li:first")
+$("li:last")
+$("li:eq(2)")
+These are the selectors
+Content methods :
+.text()
+.html()
+.val()
+Attributes and prop methods :
+.attr()
+.removeAttr()
+.prop()
+.addClass()
+.removeClass()
+.toggleClass()
+Add/remove/toggle class methods
+.append()
+.remove()
+.css()
+.width()
+.height()
+.innerWidth()
+.outerWidth()
+.on()
+.toggle()
+.slideToggle()
+.next()
+.click()
+These are more main main jQuery methods that you’ll use most of the times but there are more that you can explore on w3 schools
+
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            height: 50%;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>change img btn src</h1>
+
+    <img src="https://images.unsplash.com/photo-1772436756233-7752e9eb1d93?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="img" id="imgContent">
+
+    <br>
+    <br>
+
+    <button id="changeBtn">Change image</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+
+    $(document).ready(() => {
+        let check = false;
+        $("#changeBtn").click(() => {
+            check = !check;
+            if (check) {
+                $("#imgContent").attr("src", "https://images.unsplash.com/photo-1772089003225-6eccf98ddbf9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+            }
+            else {
+                $("#imgContent").attr("src", "https://images.unsplash.com/photo-1772436756233-7752e9eb1d93?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+            }
+        })
+    })
+
+
+</script>
+
+</html>

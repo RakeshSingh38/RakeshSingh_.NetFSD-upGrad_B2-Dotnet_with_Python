@@ -1,0 +1,273 @@
+<!-- 
+Location-Based Weather Logger (Level-2) 
+Scenario 
+Create a web application that fetches the user's geographic location and stores location history in localStorage. 
+ 
+📌 Requirements 
+Button: Get My Location 
+Use: 
+navigator.geolocation.getCurrentPosition() 
+Display: 
+Latitude 
+Longitude 
+Handle: 
+Permission denied 
+Timeout 
+Location unavailable 
+Save last 5 location entries in localStorage. 
+Display location history on page load. 
+  
+🛠️ Technical Constraints 
+Must handle: 
+Success callback 
+Error callback 
+Use browser permission handling. 
+Store data as JSON using: 
+JSON.stringify() 
+JSON.parse() 
+Use inline event (onclick). 
+🎯 Learning Outcome 
+Learners should be able to: 
+Geolocation API 
+Handling browser permissions 
+Error handling in APIs 
+Managing structured data in localStorage 
+JSON parsing and stringifying 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geo Memory Tracker</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #1a1f36 0%, #2d3561 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+        color: white;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 42px;
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+
+    .btn-container {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    button {
+        padding: 15px 40px;
+        background: #2ecc71;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    button:hover {
+        background: #27ae60;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+    }
+
+    #current {
+        text-align: center;
+        font-size: 20px;
+        color: #ffc107;
+        margin-bottom: 40px;
+        font-weight: 500;
+    }
+
+    table {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    thead {
+        background: #2ecc71;
+        color: white;
+    }
+
+    th {
+        padding: 15px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    td {
+        padding: 15px;
+        text-align: center;
+        color: #333;
+        border-bottom: 1px solid #eee;
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    tbody tr:hover {
+        background: #f8f9fa;
+    }
+
+    .no-data {
+        text-align: center;
+        padding: 30px;
+        color: #999;
+    }
+</style>
+</head>
+<body>
+
+<h1>Geo Memory Tracker</h1>
+
+<div class="btn-container">
+    <button onclick="getLocation()">Track My Position</button>
+</div>
+
+<p id="current">Current Position → Not fetched yet</p>
+
+<table id="history">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Captured Time</th>
+        </tr>
+    </thead>
+    <tbody id="historyBody">
+        <tr>
+            <td colspan="4" class="no-data">No location history yet</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+function getLocation() {
+    if (!navigator.geolocation) {
+        alert("Geolocation not supported");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        successCallback,
+        errorCallback,
+        { timeout: 10000 }
+    );
+}
+
+function successCallback(position) {
+    const latitude = position.coords.latitude.toFixed(4);
+    const longitude = position.coords.longitude.toFixed(4);
+
+    const currentEl = document.getElementById("current");
+    currentEl.innerHTML = "Current Position → " + latitude + " , " + longitude;
+    currentEl.style.color = "#ffc107";
+
+    const locationObj = {
+        latitude: latitude,
+        longitude: longitude,
+        time: new Date().toLocaleString()
+    };
+
+    saveLocation(locationObj);
+    displayHistory();
+}
+
+function errorCallback(error) {
+    let message = "";
+
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            message = "❌ Permission denied - Please allow location access";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            message = "❌ Location unavailable";
+            break;
+        case error.TIMEOUT:
+            message = "❌ Request timeout";
+            break;
+        default:
+            message = "❌ Unknown error";
+    }
+
+    document.getElementById("current").innerHTML = message;
+    document.getElementById("current").style.color = "#ff6b6b";
+}
+
+function saveLocation(loc) {
+    let history = localStorage.getItem("locations");
+
+    if (history) {
+        history = JSON.parse(history);
+    } else {
+        history = [];
+    }
+
+    history.unshift(loc); 
+
+    if (history.length > 5) {
+        history.pop(); 
+    }
+
+    localStorage.setItem("locations", JSON.stringify(history));
+}
+
+function displayHistory() {
+    const tbody = document.getElementById("historyBody");
+    tbody.innerHTML = "";
+
+    let history = localStorage.getItem("locations");
+
+    if (!history) {
+        tbody.innerHTML = '<tr><td colspan="4" class="no-data">No location history yet</td></tr>';
+        return;
+    }
+
+    history = JSON.parse(history);
+
+    if (history.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" class="no-data">No location history yet</td></tr>';
+        return;
+    }
+
+    history.forEach((loc, index) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${loc.latitude}</td>
+            <td>${loc.longitude}</td>
+            <td>${loc.time}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+
+window.onload = displayHistory;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kid's Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h2>Some<span>Store</span></h2>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="mens.html">MEN</a>
+                <a href="womens.html">WOMEN</a>
+                <a href="kids.html">KIDS</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products, brands and more">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="products-container">
+        <h2 class="section-heading">Kid's Clothing Collection</h2>
+        <div class="prod-grid" id="prod-grid-kids">
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>@ 2026 SomeStore. All rigths reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const searchInput = document.querySelector('.search-bar input');
+        const grid = document.getElementById('prod-grid-kids');
+        let kidsProducts = [];
+
+        function render(list) {
+            grid.innerHTML = list.map(product => `
+                <div class="prod-card">
+                    <div class="prod-img">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="rating-badge">${product.rating} <i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="prod-details">
+                        <h3 class="brand-name">${product.brand}</h3>
+                        <p class="prod-name">${product.name}</p>
+                        <div class="price-row">
+                            <span class="current-price">₹${product.price}</span>
+                            <span class="original-price">₹${product.original_price}</span>
+                            <span class="discount">(${product.discount})</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function loadProducts() {
+            try {
+                const resp = await fetch('products.json');
+                const products = await resp.json();
+                kidsProducts = products.filter(p => p.category === 'Kids');
+                render(kidsProducts);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        loadProducts();
+
+        let search;
+        searchInput.addEventListener('input', () => {
+            clearTimeout(search);
+            search = setTimeout(() => {
+                const query = searchInput.value.toLowerCase();
+                const filtered = kidsProducts.filter(p =>
+                    p.name.toLowerCase().includes(query) ||
+                    p.brand.toLowerCase().includes(query)
+                );
+                render(filtered);
+            }, 300);
+        });
+    </script>
+</body>
+
+</html>

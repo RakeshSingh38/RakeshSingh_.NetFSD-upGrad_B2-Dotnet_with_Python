@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create element</title>
+</head>
+<style>
+    .box {
+        background-color: gray;
+        height: 100px;
+        width: 100px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h1>new div</h1>
+    <button onclick="addBox()">Add div</button>
+    <button onclick="removeBox()">remove div</button>
+    <div id="container">content</div>
+    <br>
+</body>
+<script>
+
+    function addBox() {
+
+        let newDivBox = document.createElement("div");
+        let newPBox = document.createElement("p");
+        let newH1Box = document.createElement("h1");
+
+        newDivBox.className = "box"; newDivBox.innerText = "i m a div"
+        newPBox.className = "box"; newPBox.innerText = "i m a p tag"
+        newH1Box.className = "box"; newH1Box.innerText = "i m a h1 tag"
+
+        document.getElementById("container").appendChild(newDivBox);
+        document.getElementById("container").appendChild(newPBox);
+        document.getElementById("container").appendChild(newH1Box);
+    }
+
+    function removeBox(){
+        let isExist = document.querySelector(".box");
+
+        if(isExist) isExist.remove();
+    }
+
+</script>
+
+</html>

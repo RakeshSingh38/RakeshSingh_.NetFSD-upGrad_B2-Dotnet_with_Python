@@ -1,0 +1,56 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Rakesh Singh",
+            "age": 26,
+            "email": "rakesh@example.com",
+            "phone": "9876543210",
+            "address": {
+                "street": "TG Road",
+                "city": "Mumbai",
+                "state": "MH",
+                "zip": "512012"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Some Name",
+            "age": 26,
+            "email": "some@name.com",
+            "phone": "9123456780",
+            "address": {
+                "street": "Some Street",
+                "city": "Bengaluru",
+                "state": "KR",
+                "zip": "700016"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Some Name2",
+            "age": 26,
+            "email": "some@name.com",
+            "phone": "9123456780",
+            "address": {
+                "street": "Some Street",
+                "city": "Bengaluru",
+                "state": "KR",
+                "zip": "700016"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Some Name3",
+            "age": 26,
+            "email": "some@name.com",
+            "phone": "9123456780",
+            "address": {
+                "street": "Some Street",
+                "city": "Bengaluru",
+                "state": "KR",
+                "zip": "700016"
+            }
+        }
+    ]
+}

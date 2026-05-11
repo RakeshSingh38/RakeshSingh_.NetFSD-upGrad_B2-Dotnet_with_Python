@@ -1,0 +1,181 @@
+<!-- 
+Location-Based Weather Logger (Level-2) 
+Scenario 
+Create a web application that fetches the user's geographic location and stores location history in localStorage. 
+ 
+📌 Requirements 
+Button: Get My Location 
+Use: 
+navigator.geolocation.getCurrentPosition() 
+Display: 
+Latitude 
+Longitude 
+Handle: 
+Permission denied 
+Timeout 
+Location unavailable 
+Save last 5 location entries in localStorage. 
+Display location history on page load. 
+  
+🛠️ Technical Constraints 
+Must handle: 
+Success callback 
+Error callback 
+Use browser permission handling. 
+Store data as JSON using: 
+JSON.stringify() 
+JSON.parse() 
+Use inline event (onclick). 
+🎯 Learning Outcome 
+Learners should be able to: 
+Geolocation API 
+Handling browser permissions 
+Error handling in APIs 
+Managing structured data in localStorage 
+JSON parsing and stringifying 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Location Logger</title>
+</head>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #current,
+        #error {
+            margin-top: 15px;
+        }
+
+        #error {
+            color: red;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #f2f2f2;
+            padding: 10px 0px;
+            margin-bottom: 5px;
+        }
+    </style>
+<body>
+
+<h2>Location-Based Logger</h2>
+
+<button onclick="getLocation()">Get My Location</button>
+
+<h3>Current Location</h3>
+<p id="current">Not fetched</p>
+
+<h3>Location History (Last 5)</h3>
+<ul id="history"></ul>
+
+<script>
+function getLocation() {
+    if (!navigator.geolocation) {
+        alert("Geolocation not supported");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        successCallback,
+        errorCallback,
+        { timeout: 10000 }
+    );
+}
+
+function successCallback(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+
+    document.getElementById("current").innerHTML =
+        "Latitude: " + latitude + "<br>Longitude: " + longitude;
+
+    const locationObj = {
+        latitude: latitude,
+        longitude: longitude,
+        time: new Date().toLocaleString()
+    };
+
+    saveLocation(locationObj);
+    displayHistory();
+}
+
+function errorCallback(error) {
+    let message = "";
+
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            message = "Permission denied";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            message = "Location unavailable";
+            break;
+        case error.TIMEOUT:
+            message = "Request timeout";
+            break;
+        default:
+            message = "Unknown error";
+    }
+
+    document.getElementById("current").innerHTML = message;
+}
+
+function saveLocation(loc) {
+    let history = localStorage.getItem("locations");
+
+    if (history) {
+        history = JSON.parse(history);
+    } else {
+        history = [];
+    }
+
+    history.unshift(loc); 
+
+    if (history.length > 5) {
+        history.pop(); 
+    }
+
+    localStorage.setItem("locations", JSON.stringify(history));
+}
+
+function displayHistory() {
+    const list = document.getElementById("history");
+    list.innerHTML = "";
+
+    let history = localStorage.getItem("locations");
+
+    if (!history) return;
+
+    history = JSON.parse(history);
+
+    history.forEach(loc => {
+        const li = document.createElement("li");
+        li.textContent =
+            loc.latitude + ", " +
+            loc.longitude + " (" + loc.time + ")";
+        list.appendChild(li);
+    });
+}
+
+
+window.onload = displayHistory;
+</script>
+
+</body>
+</html>

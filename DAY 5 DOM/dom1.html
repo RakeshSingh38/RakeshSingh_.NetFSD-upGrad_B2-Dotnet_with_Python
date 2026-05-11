@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+
+<body>
+    <h1 id="t2" class="test">test DOM</h1>
+
+    <button onclick="change()">click me</button>
+</body>
+
+<script>
+    // const changeTxt = document.getElementsByTagName("h1");
+
+    // function change() {
+    //     changeTxt[0].innerHTML = "Meow";
+    // }
+
+    // const changeTxt = document.getElementById("t2");
+
+    // function change() {
+    //     changeTxt.innerText = "Meow";
+    // }
+
+    const changeTxt = document.getElementsByTagName("h1");
+
+    function change() {
+        changeTxt[0].innerText = "Meow";
+    }
+
+</script>
+
+</html>

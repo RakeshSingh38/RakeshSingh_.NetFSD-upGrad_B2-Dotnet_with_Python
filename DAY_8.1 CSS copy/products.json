@@ -1,0 +1,222 @@
+﻿[
+    {
+        "id":  1,
+        "name":  "Sports T-shirt",
+        "brand":  "HRX",
+        "price":  349,
+        "original_price":  699,
+        "discount":  "50% OFF",
+        "category":  "Men",
+        "image":  "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400\u0026h=400\u0026fit=crop",
+        "rating":  4.5
+    },
+    {
+        "id":  2,
+        "name":  "Cotton Polo T-shirt",
+        "brand":  "HNM",
+        "price":  659,
+        "original_price":  1299,
+        "discount":  "49% OFF",
+        "category":  "Men",
+        "image":  "https://asset20.ckassets.com/thegoodlookbook/wp-content/uploads/sites/2/2024/05/United-Colors-of-Benetton-Mens-Slim-T-Shirt-1024x512.jpg",
+        "rating":  4.2
+    },
+    {
+        "id":  3,
+        "name":  "Casual T-shirt",
+        "brand":  "Levis",
+        "price":  512,
+        "original_price":  999,
+        "discount":  "48% OFF",
+        "category":  "Men",
+        "image":  "https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?w=400\u0026h=400\u0026fit=crop",
+        "rating":  4.3
+    },
+    {
+        "id":  4,
+        "name":  "Printed T-shirt",
+        "brand":  "Mark \u0026 Spencer",
+        "price":  499,
+        "original_price":  999,
+        "discount":  "50% OFF",
+        "category":  "Men",
+        "image":  "https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=400\u0026h=400\u0026fit=crop",
+        "rating":  4.1
+    },
+    {
+        "id":  5,
+        "name":  "Polo T-shirt",
+        "brand":  "Pepe",
+        "price":  391,
+        "original_price":  799,
+        "discount":  "51% OFF",
+        "category":  "Men",
+        "image":  "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=400\u0026h=400\u0026fit=crop",
+        "rating":  4.0
+    },
+    {
+        "id":  6,
+        "name":  "Men Slim Fit Shirt",
+        "brand":  "Roadster",
+        "price":  649,
+        "original_price":  1499,
+        "discount":  "56% OFF",
+        "category":  "Men",
+        "image":  "https://www.bombayshirts.com/cdn/shop/files/94fcc201-d296-f691-3e87-b6aad0a8f8c3_revise_203_fd1c52f5-0750-4eb8-9dab-ab64176eae9b.jpg?crop=center\u0026height=763\u0026v=1758539846\u0026width=611",
+        "rating":  4.5
+    },
+    {
+        "id":  7,
+        "name":  "Cartoon Print T-shirt",
+        "brand":  "Hopscotch",
+        "price":  349,
+        "original_price":  699,
+        "discount":  "50% OFF",
+        "category":  "Kids",
+        "image":  "https://cdn-images.threadless.com/threadless-media/artist_shops/shops/hopscotch/products/1558825/shirt-1594734774-5009d9ebfed5c355f89e3e63236aa807.png?v=3\u0026d=eyJvcHMiOiBbWyJ0cmltc2NyaXB0IiwgWzgxNC4yODU3MTQyODU3MTQyLCA5MzQuMjg1NzE0Mjg1NzE0Ml0sIHt9XSwgWyJyZXNpemUiLCBbNjMxXSwge31dLCBbIm92ZXJsYXkiLCBbInRocmVhZGxlc3MtbWVkaWEvYXJ0aXN0X3Nob3BzL292ZXJsYXlzL2NhdGVnb3JpZXMva2lkcy9zaXplcy8qL3N0eWxlcy90ZWUvY29sb3JzLyovZnJvbnQtMTQ1NDQyODYzMi1kOTZmYzYzYjQ2ZWRiY2Q3ZjFiNGVkODRjOGY2YTc1Mi5wbmciXSwgeyJ4IjogNjgwLCAieSI6IDYxNywgImJhY2tncm91bmQiOiAiMDAwMDAwIn1dLCBbInJlc2l6ZSIsIFs1MDBdLCB7fV0sIFsiY2FudmFzX2NlbnRlcmVkIiwgWzUwMCwgNTAwLCAiI2ZmZmZmZiJdLCB7fV0sIFsiZW5jb2RlIiwgWyJ3ZWJwIiwgODVdLCB7fV1dLCAiZm9yY2UiOiBmYWxzZSwgIm9ubHlfbWV0YSI6IGZhbHNlfQ==",
+        "rating":  4.7
+    },
+    {
+        "id":  8,
+        "name":  "Cotton Shorts",
+        "brand":  "Lilliput",
+        "price":  299,
+        "original_price":  499,
+        "discount":  "40% OFF",
+        "category":  "Kids",
+        "image":  "https://img0.junaroad.com/uiproducts/20536192/pri_175_p-1714045372.jpg",
+        "rating":  4.3
+    },
+    {
+        "id":  9,
+        "name":  "Casual Dress",
+        "brand":  "Gini \u0026 Jony",
+        "price":  549,
+        "original_price":  1099,
+        "discount":  "50% OFF",
+        "category":  "Kids",
+        "image":  "https://m.media-amazon.com/images/I/61FvtUBPNfL._AC_UY1100_.jpg",
+        "rating":  4.6
+    },
+    {
+        "id":  10,
+        "name":  "Denim Jacket",
+        "brand":  "UCB Kids",
+        "price":  899,
+        "original_price":  1499,
+        "discount":  "40% OFF",
+        "category":  "Kids",
+        "image":  "https://messinahembry.com/cdn/shop/files/46c1885e-935a-4b23-b0a9-98fd04a7e6f2.jpg?v=1706793542",
+        "rating":  4.7
+    },
+    {
+        "id":  11,
+        "name":  "Party Wear Outfit",
+        "brand":  "FirstCry",
+        "price":  699,
+        "original_price":  999,
+        "discount":  "30% OFF",
+        "category":  "Kids",
+        "image":  "https://cdn.ae1stcry.com/brainbees/images/products/583x720/1c58aae12eff7a.webp",
+        "rating":  4.4
+    },
+    {
+        "id":  12,
+        "name":  "Boys Checkered Shirt",
+        "brand":  "H\u0026M Kids",
+        "price":  499,
+        "original_price":  799,
+        "discount":  "37% OFF",
+        "category":  "Kids",
+        "image":  "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=400\u0026h=400\u0026fit=crop",
+        "rating":  4.8
+    },
+    {
+        "id":  13,
+        "name":  "Trendy T-Shirt",
+        "brand":  "H\u0026M",
+        "price":  599,
+        "original_price":  999,
+        "discount":  "40% OFF",
+        "category":  "Women",
+        "image":  "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400\u0026h=400\u0026fit=crop",
+        "rating":  4.1
+    },
+    {
+        "id":  14,
+        "name":  "Designer Kurti",
+        "brand":  "Biba",
+        "price":  1099,
+        "original_price":  2199,
+        "discount":  "50% OFF",
+        "category":  "Women",
+        "image":  "https://www.biba.in/dw/image/v2/BKQK_PRD/on/demandware.static/-/Sites-biba-product-catalog/default/dwa6cb242e/images/aw23/skdbnrsi8968aw23powrblu_1.jpg?sw=502\u0026sh=753\u0026q=100\u0026strip=false",
+        "rating":  4.5
+    },
+    {
+        "id":  15,
+        "name":  "Elegant Summer Dress",
+        "brand":  "Allen Solly",
+        "price":  1299,
+        "original_price":  2599,
+        "discount":  "50% OFF",
+        "category":  "Women",
+        "image":  "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400\u0026h=400\u0026fit=crop",
+        "rating":  4.4
+    },
+    {
+        "id":  16,
+        "name":  "Women Floral Dress",
+        "brand":  "Zara",
+        "price":  1299,
+        "original_price":  2599,
+        "discount":  "50% OFF",
+        "category":  "Women",
+        "image":  "https://www.shopamericanthreads.com/cdn/shop/files/ZARAMINIDRESS4.jpg?v=1769709410",
+        "rating":  4.2
+    },
+    {
+        "id":  17,
+        "name":  "Formal Top",
+        "brand":  "WOW",
+        "price":  749,
+        "original_price":  1299,
+        "discount":  "42% OFF",
+        "category":  "Women",
+        "image":  "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=400\u0026h=400\u0026fit=crop",
+        "rating":  4.0
+    },
+    {
+        "id":  18,
+        "name":  "Casual Kurti",
+        "brand":  "FabIndia",
+        "price":  899,
+        "original_price":  1499,
+        "discount":  "40% OFF",
+        "category":  "Women",
+        "image":  "https://images.unsplash.com/photo-1485231183945-fffde7cc051e?w=400\u0026h=400\u0026fit=crop",
+        "rating":  4.2
+    },
+    {
+        "id":  19,
+        "name":  "Unisex Sneakers",
+        "brand":  "Nike",
+        "price":  2499,
+        "original_price":  4999,
+        "discount":  "50% OFF",
+        "category":  "Shoes",
+        "image":  "https://assets.ajio.com/medias/sys_master/root/20220129/248n/61f45b6af997dd6623475b0d/-473Wx593H-469097250-white-MODEL.jpg",
+        "rating":  4.1
+    },
+    {
+        "id":  20,
+        "name":  "Wireless Headphones",
+        "brand":  "Sony",
+        "price":  4999,
+        "original_price":  9990,
+        "discount":  "50% OFF",
+        "category":  "Electronics",
+        "image":  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500\u0026auto=format\u0026fit=crop\u0026q=60\u0026ixlib=rb-4.0.3\u0026ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D",
+        "rating":  4.6
+    }
+]

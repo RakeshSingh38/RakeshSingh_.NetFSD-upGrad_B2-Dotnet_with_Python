@@ -1,0 +1,56 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Rakesh Singh",
+            "age": 26,
+            "email": "rakesh@example.com",
+            "phone": "9876543210",
+            "address": {
+                "street": "TG Road",
+                "city": "Mumbai",
+                "state": "MH",
+                "zip": "512012"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Priya Sharma",
+            "age": 28,
+            "email": "priya.sharma@example.com",
+            "phone": "9123456780",
+            "address": {
+                "street": "MG Road",
+                "city": "Bengaluru",
+                "state": "KA",
+                "zip": "560001"
+            }
+        },
+        {
+            "id": 3,
+            "name": "Amit Patel",
+            "age": 30,
+            "email": "amit.patel@example.com",
+            "phone": "9988776655",
+            "address": {
+                "street": "Ring Road",
+                "city": "Ahmedabad",
+                "state": "GJ",
+                "zip": "380015"
+            }
+        },
+        {
+            "id": 4,
+            "name": "Sneha Gupta",
+            "age": 25,
+            "email": "sneha.gupta@example.com",
+            "phone": "9876543211",
+            "address": {
+                "street": "Park Street",
+                "city": "Kolkata",
+                "state": "WB",
+                "zip": "700016"
+            }
+        }
+    ]
+}

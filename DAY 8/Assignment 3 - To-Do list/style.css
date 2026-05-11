@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.todo-container {
+    max-width: 350px;
+    margin: 0 auto;
+    & h2 {
+        text-align: center;
+    }
+}
+
+input[type="text"] {
+    padding: 4px;
+    font-size: 1em;
+}
+
+button {
+    padding: 4px 10px;
+    font-size: 1em;
+}
+
+#taskList {
+    margin-top: 16px;
+}

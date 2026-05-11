@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student info</title>
+</head>
+
+<!-- 
+Dynamic Student Profile Manager (Level-2) 
+Scenario 
+Create a mini student profile system where details are stored in an object and displayed dynamically using DOM manipulation. 
+📌 Requirements 
+Create a student object with: 
+name 
+rollNo 
+marks 
+ Create a function updateStudentProfile(studentObj): 
+Accepts the object as a parameter. 
+Displays details in a styled <div>. 
+Add another function updateMarks(newMarks): 
+Updates marks and refreshes the display. 
+ 
+🛠️ Technical Constraints 
+Student object must be declared in global scope. 
+Functions should update object values using parameters. 
+DOM should update without pag
+-->
+
+<style>
+    #profile {
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        background: #f4f4f4;
+        width: 300px;
+    }
+</style>
+
+<body>
+
+    <!-- // note            make sure to include parameter as studentObj then only it will work -->
+    <button onclick="updateStudentProfile(studentObj)">Student Profile</button>
+
+    <!-- // see     if we define parameter in the function then we need to use it -->
+    <button onclick="updateMarks(150)">Update marks</button>
+    <div id="profile"></div>
+</body>
+<script>
+
+    let studentObj = {
+        name: "Rakesh Singh",
+        rollNo: 52,
+        marks: 100,
+    }
+
+    function updateStudentProfile(studentObj) {
+        console.log(`hello ${studentObj.name} your roll no is ${studentObj.rollNo} and marks is ${studentObj.marks} `
+        )
+        document.getElementById("profile").innerHTML =
+        `<h3>Name: ${studentObj.name}</h3>
+        <p>Roll No: ${studentObj.rollNo}</p>
+        <p>Marks: ${studentObj.marks}</p>`;
+    }
+
+    function updateMarks(newMarks) {
+        studentObj.marks = newMarks;
+
+        document.getElementById("profile").innerText = `updated marks are ${studentObj.marks}`
+    }
+</script>
+
+</html>

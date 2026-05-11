@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+
+Problem 3 (Level-2): Product List with Add to Cart Counter 
+Scenario: 
+An e-commerce website wants to display a list of products. When users click 'Add to Cart', the cart counter at the top should increase dynamically. 
+📌 Requirements 
+• Display at least 4 products with 'Add to Cart' buttons. 
+• Use jQuery to handle button click events. 
+• Increase the cart counter dynamically without page refresh. 
+• Disable the button once the product is added. 
+• Display a small confirmation message beside the product. 
+ 
+🛠️ Technical Constraints 
+• Use jQuery event delegation if needed. 
+• Use .text(), .attr(), and .prop() methods. 
+• No backend or database integration. 
+ 
+Expectations: 
+• Efficient event handling. 
+• Proper use of jQuery methods for attribute manipulation. 
+• Clean UI updates. 
+ 
+🎯 Learning Outcome 
+• Understand advanced DOM manipulation. 
+• Use jQuery methods for dynamic content updates. 
+• Apply event delegation concepts.
+
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic cart</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .cart {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 8px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .prod-info {
+            flex: 1;
+        }
+
+        button {
+            padding: 4px 10px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<!-- 
+Dynamic Shopping Cart System
+📌 Scenario
+An e-commerce website needs a dynamic cart where users can add products, update quantities, and remove items without refreshing the page.
+📌 Requirements
+• Add product dynamically to cart
+• Increase / decrease quantity
+• Remove product
+• Calculate total price automatically
+• Prevent duplicate product entries
+🛠️ Technical Constraints
+• Use DOM manipulation
+• Use event delegation for all buttons
+• Use spread operator to update cart state
+• Use rest operator in total calculation function
+
+-->
+
+<body>
+    <h1>shop <span id="cart-counter">(0 items in cart)</span></h1>
+    <div class="cart">
+        <section id="products"></section>
+
+        <h2>Your Cart</h2>
+        <div class="cart-items"></div>
+        <div class="total">Total: ₹<span class="total-price">0</span></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

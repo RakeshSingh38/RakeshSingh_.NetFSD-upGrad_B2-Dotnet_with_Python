@@ -1,0 +1,18 @@
+function validateAge(){
+    let age = document.getElementById("age").value;
+
+    if(age >= 18){
+        let div = document.getElementById("error");
+
+        div.innerHTML = "<h1>Age is validated</h1>"
+
+        div.style.color = "green"
+    } else {
+        let error = document.getElementById("error");
+
+        error.innerHTML = "<h1>Age Cannot be less than 18!</h1>"
+
+        error.style.color = "red"
+        error.style.backgroundColor = "black"
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- 
+A startup company wants a simple interactive webpage where users can click a button to submit feedback and instantly see a confirmation message without refreshing the page. 
+  
+📌 Requirements 
+• Create a webpage with a “Submit Feedback” button. 
+• When clicked, display a confirmation message dynamically. 
+• Use JavaScript event listeners to handle the click event. 
+  
+🛠️ Technical Constraints 
+• Use plain HTML, CSS, and JavaScript. 
+• Event handling must use addEventListener(). 
+• No external frameworks allowed. 
+  
+Expectations: 
+• Proper DOM manipulation. 
+• Clean and readable code. 
+  
+   
+🎯 Learning Outcome 
+• Understand browser event handling. 
+• Learn DOM manipulation basics
+
+-->
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>Feedback Form</h1>
+
+            <form id="form">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" id="btn">Submit Feedback</button>
+            </form>
+
+            <div id="msg-box" class="hidden">
+                <h2>Thank You!</h2>
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

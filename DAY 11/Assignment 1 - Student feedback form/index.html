@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        input,
+        select,
+        textarea {
+            margin: 8px 0;
+            padding: 5px;
+            width: 250px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 20px;
+            cursor: pointer;
+        }
+
+        #success {
+            color: green;
+            font-weight: bold;
+            margin-top: 15px;
+            display: none;
+        }
+
+        #error {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+
+        #submitBtn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>student feedback form</h1>
+
+    <form id="feedbackForm">
+        <br>
+        <label for="name">name :</label>
+        <input type="text" name="name" id="name" placeholder="enter your name">
+        <br>
+
+        <label for="email">email :</label>
+        <input type="email" name="email" id="email" placeholder="enter your email">
+        <br>
+
+        <label for="course">course rating </label>
+        <select id="course" name="course">
+            <option value="">select rating</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+        <br>
+
+        <label for="comment">comments :</label>
+        <textarea id="comment" name="comment" rows="3" placeholder="enter your comments"></textarea>
+        <br>
+
+        <button type="submit" id="submitBtn">submit</button>
+    </form>
+
+    <div id="error"></div>
+    <div id="success">thank you! your feedback has been submitted succesfully</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#feedbackForm").submit(function (e) {
+                e.preventDefault(); 
+
+                const name = $("#name").val();
+                const email = $("#email").val();
+
+                $("#error").hide();
+                $("#success").hide();
+                
+                if (name === "" && email === "") {
+                    $("#error").text("name and email are required").show();
+                } else if (name === "") {
+                    $("#error").text("name is required.").show();
+                } else if (email === "") {
+                    $("#error").text("email is required.").show();
+                } else {
+                    $("#success").show();
+                    $("#feedbackForm")[0].reset(); 
+                }   
+            });         
+
+        });
+    </script>
+
+</body>
+
+</html>

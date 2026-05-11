@@ -1,0 +1,3 @@
+learn about local serving through fetch() function
+
+fetch() is a built-in JavaScript function that allows you to make network requests to retrieve resources from a server. It is commonly used to fetch data from APIs or to load files from a local server.

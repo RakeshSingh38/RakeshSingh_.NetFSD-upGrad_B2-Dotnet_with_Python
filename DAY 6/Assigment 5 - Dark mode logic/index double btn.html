@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark mode</title>
+
+    <!-- 
+    Dark Mode toggle 
+1) Create a button to change light mode and dark mode
+2) store a variable for that in local storage
+3) onclick the background should change to black and text to white and if clicked again the background should change to white and text to black
+    
+    -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            transition: 0.3s;
+        }
+
+        body.light {
+            background-color: white;
+            color: black;
+        }
+
+        body.dark {
+            background-color: black;
+            color: white;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .container button {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body class="light">
+    <main class="container">
+        <button onclick="lightTheme()">Light mode</button>
+        <button onclick="darkTheme()">Dark mode</button>
+    </main>
+
+    <script>
+        function lightTheme() {
+            document.body.className = "light";
+            localStorage.setItem("theme", "light");
+        }
+
+        function darkTheme() {
+            document.body.className = "dark";
+            localStorage.setItem("theme", "dark");
+        }
+
+        let theme = localStorage.getItem("theme")
+        document.body.className = theme;
+    </script>
+</body>
+
+</html>

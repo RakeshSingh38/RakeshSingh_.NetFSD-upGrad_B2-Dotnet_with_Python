@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic cart</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .cart {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        button {
+            padding: 4px 8px;
+        }
+    </style>
+</head>
+
+<!-- 
+Dynamic Shopping Cart System
+📌 Scenario
+An e-commerce website needs a dynamic cart where users can add products, update quantities, and remove items without refreshing the page.
+📌 Requirements
+• Add product dynamically to cart
+• Increase / decrease quantity
+• Remove product
+• Calculate total price automatically
+• Prevent duplicate product entries
+🛠️ Technical Constraints
+• Use DOM manipulation
+• Use event delegation for all buttons
+• Use spread operator to update cart state
+• Use rest operator in total calculation function
+
+-->
+
+<body>
+    <h1>dynamic cart</h1>
+    <div class="cart">
+        <section id="products"></section>
+
+        <h2>Your Cart</h2>
+        <div class="cart-items"></div>
+        <div class="total">Total: ₹<span class="total-price">0</span></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

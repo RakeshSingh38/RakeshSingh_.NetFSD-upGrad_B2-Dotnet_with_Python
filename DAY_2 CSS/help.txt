@@ -1,0 +1,103 @@
+// cart state
+let cart = [];
+
+// Utility functions
+function calculateTotal(...prices) {
+    return prices.reduce((acc, curr) => acc + curr, 0);
+}
+
+function renderProducts(products) {
+    const section = document.querySelector('.products');
+    section.innerHTML = '';
+    products.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'product';
+        div.dataset.id = p.id;
+        div.dataset.price = p.price;
+        div.innerHTML = `
+            <img src="${p.image}" alt="${p.name}" width="60" />
+            <span>${p.name} - $${p.price}</span>
+            <button class="add-btn">Add to cart</button>
+        `;
+        section.appendChild(div);
+    });
+}
+
+function renderCart() {
+    const container = document.querySelector('.cart-items');
+    container.innerHTML = '';
+    cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'product';
+        div.dataset.id = item.id;
+        div.innerHTML = `
+            <span>${item.name}</span>
+            <div>
+                <button class="decrease">-</button>
+                <span class="qty">${item.qty}</span>
+                <button class="increase">+</button>
+                <button class="remove">x</button>
+            </div>
+        `;
+        container.appendChild(div);
+    });
+
+    const totalPrice = calculateTotal(...cart.map(i => i.price * i.qty));
+    document.querySelector('.total-price').textContent = totalPrice;
+}
+
+function addToCart(product) {
+    const exists = cart.find(i => i.id === product.id);
+    if (exists) {
+        cart = cart.map(i =>
+            i.id === product.id ? { ...i, qty: i.qty + 1 } : i
+        );
+    } else {
+        cart = [...cart, { ...product, qty: 1 }];
+    }
+    renderCart();
+}
+
+function changeQty(id, delta) {
+    cart = cart.map(i =>
+        i.id === id ? { ...i, qty: Math.max(1, i.qty + delta) } : i
+    );
+    renderCart();
+}
+
+function removeFromCart(id) {
+    cart = cart.filter(i => i.id !== id);
+    renderCart();
+}
+
+// event delegation
+document.addEventListener('click', e => {
+    if (e.target.classList.contains('add-btn')) {
+        const prodEl = e.target.closest('.product');
+        const product = {
+            id: +prodEl.dataset.id,
+            name: prodEl.querySelector('span').textContent.split(' - $')[0],
+            price: +prodEl.dataset.price
+        };
+        addToCart(product);
+    }
+
+    if (e.target.classList.contains('increase')) {
+        const id = +e.target.closest('.product').dataset.id;
+        changeQty(id, 1);
+    }
+    if (e.target.classList.contains('decrease')) {
+        const id = +e.target.closest('.product').dataset.id;
+        changeQty(id, -1);
+    }
+    if (e.target.classList.contains('remove')) {
+        const id = +e.target.closest('.product').dataset.id;
+        removeFromCart(id);
+    }
+});
+
+// load products
+fetch('products.json')
+    .then(r => r.json())
+    .then(data => renderProducts(data))
+    .catch(err => console.error(err));

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+
+<body>
+    <h1>innerText and innerHTML</h1>
+    <h1 id="box">text</h1>
+
+    <button onclick="changeInnerText()">innerText</button>
+    <button onclick="changeInnerHTML()">innerHTML</button>
+    <button onclick="reset()">reset</button>
+</body>
+
+<script>
+
+    const box = document.getElementById("box");
+
+    function changeInnerText() {
+        box.innerText = "hiiiiiiiiiiiii";
+    }
+    function changeInnerHTML() {
+        box.innerHTML = "<h3>Namaste World</h3>";
+    }
+    const originalText = box.innerText;
+
+    function reset() {
+        box.innerText = originalText;
+    }
+
+
+</script>
+
+</html>

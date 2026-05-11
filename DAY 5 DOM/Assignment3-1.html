@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+
+    <style>
+        body {
+            margin: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f6f9;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            width: 300px;
+        }
+
+        #counter {
+            font-size: 48px;
+            margin: 20px 0;
+            color: #2c3e50;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #handleIncrement {
+            background-color: blue;
+            color: white;
+        }
+
+        #reset {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Counter</h1>
+
+        <h2 id="counter">0</h2>
+
+        <button id="handleIncrement">Increment</button>
+        <button id="reset">Reset</button>
+
+    </div>
+
+    <script>
+
+        let count = 0;
+
+        function handleIncrement(step) {
+            count += step;
+            document.getElementById("counter").innerText = count;
+        }
+
+        function handleReset() {
+            count = 0;
+            document.getElementById("counter").innerText = count;
+        }
+
+        document.getElementById('handleIncrement').onclick = function () {
+            handleIncrement(1);
+        };
+
+        document.getElementById('reset').onclick = function () {
+            handleReset();
+        };
+
+    </script>
+
+</body>
+
+</html>

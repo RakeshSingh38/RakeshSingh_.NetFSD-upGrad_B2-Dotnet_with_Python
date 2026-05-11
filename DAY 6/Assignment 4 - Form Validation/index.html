@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Notes</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        padding: 10%;
+        max-width: 600px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    form label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    form input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    article {
+        margin-top: 10px;
+    }
+
+    article button {
+        padding: 5px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+
+<body>
+    <main>
+        <form action="" onsubmit="storeValidData(); return false;">
+            <label for="name">Name:</label>
+            <input id="name" onchange="validateName()" type="text">
+
+            <label for="email">Email:</label>
+            <input id="email" onchange="validateEmail()" type="email">
+
+            <label for="age">Age:</label>
+            <input id="age" onchange="validateAge()" type="number" min="1" max="100">
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2 id="output"></h2>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

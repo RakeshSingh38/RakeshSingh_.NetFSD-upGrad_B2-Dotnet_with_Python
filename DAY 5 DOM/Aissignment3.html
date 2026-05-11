@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+Problem 3: Counter App with Scope Control (Level-2) 
+Scenario 
+Build a counter application where users can increment and reset a value. This problem focuses on variable scope and DOM manipulation. 
+📌 Requirements 
+Display a counter value starting from 0. 
+Create two buttons: 
+Increment 
+Reset 
+ Use: 
+A global variable to store counter value. 
+A function incrementCounter(step) that: 
+Accepts step value as a parameter. 
+Updates the counter. 
+Reset button should reset the counter to 0. 
+ 
+🛠️ Technical Constraints 
+Counter value must be maintained outside the function (global scope). 
+DOM updates must happen inside functions only. 
+No inline JavaScript in HTML. 
+ 
+🎯 Learning Outcome 
+Learners should be able to: 
+Understand variable scope (global vs local). 
+Apply function parameters in real scenarios. 
+Control UI behavior using JavaScript functions.
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create element</title>
+</head>
+
+<body>
+    <div style="text-align: center;">
+
+        <!-- // note    i can pass js variable as a function in this file becoz its a accessibile-->
+        <h1>Increment counter from global object</h1>
+
+        <button onclick="handleIncrement()">Increment</button>
+        <button onclick="handleReset()">Reset</button>
+        <h1 id="increment"></h1>
+        <br>
+    </div>
+</body>
+<script>
+
+    let count = 0;
+    function handleIncrement() {
+        document.getElementById("increment").innerText = ++count;
+    }
+
+    function handleReset() {
+        document.getElementById("increment").innerText = 0;
+    }
+
+</script>
+
+</html>
