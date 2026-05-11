@@ -1,0 +1,2 @@
+MOCK_API  = True
+LOG_LEVEL = "INFO"

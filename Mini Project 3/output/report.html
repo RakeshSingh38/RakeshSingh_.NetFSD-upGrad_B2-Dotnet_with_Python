@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>IT Incident Auto-Triage Report</title>
+<style>
+  body     { font-family: Segoe UI, sans-serif; background: #f4f6f9; color: #1a1d27; padding: 2rem; }
+  h1       { color: #000000; margin-bottom: .3rem;margin-top:0;padding:0 }
+  .subtitle { color: #6b7280; font-size: .85rem; margin-bottom: 1.5rem; }
+  .kpi-grid { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .kpi      { background: #fff; border: 1px solid #dde1ea; border-radius: 8px;
+              padding: 1rem 1.5rem; text-align: center; min-width: 90px; }
+  .kpi .value { font-size: 1.8rem; font-weight: 700; }
+  .kpi .label { font-size: .7rem; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; }
+  .kpi.total    .value { color: #4f46e5; }
+  .kpi.critical .value { color: #dc2626; }
+  .kpi.high     .value { color: #ea580c; }
+  .kpi.medium   .value { color: #ca8a04; }
+  .kpi.low      .value { color: #16a34a; }
+  table { width: 100%; border-collapse: collapse; background: #fff;
+          border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  th    { background: #eef0f5; color: #6b7280; font-size: .72rem; text-transform: uppercase;
+          letter-spacing: 1px; padding: .7rem 1rem; text-align: left; border-bottom: 1px solid #dde1ea; }
+  td    { padding: .65rem 1rem; border-bottom: 1px solid #dde1ea; font-size: .875rem; }
+  tr:last-child td  { border-bottom: none; }
+  tr:hover      td  { background: #f0f1ff; }
+  .badge  { padding: 2px 10px; border-radius: 20px; font-size: .72rem;
+            font-weight: 600; color: #fff; text-transform: uppercase; }
+  code    { background: #eef0f5; border: 1px solid #dde1ea; padding: 1px 6px;
+            border-radius: 4px; font-size: .78rem; color: #4f46e5; }
+  footer  { margin-top: 1.5rem; color: #6b7280; font-size: .78rem; text-align: center; }
+</style>
+</head><body><h1>IT Incident Auto-Triage & Tracker</h1><p class='subtitle'>Generated: 2026-05-01 15:55 UTC | Total Incidents: 12</p><div class="kpi-grid"><div class="kpi total"><div class="value">12</div><div class="label">Total</div></div><div class="kpi critical"><div class="value">3</div><div class="label">Critical</div></div><div class="kpi high"><div class="value">5</div><div class="label">High</div></div><div class="kpi medium"><div class="value">3</div><div class="label">Medium</div></div><div class="kpi low"><div class="value">1</div><div class="label">Low</div></div></div><table><thead><tr><th>ID</th><th>Title</th><th>Type</th><th>Severity</th><th>Team</th><th>Tickets</th><th>Reported</th></tr></thead><tbody><tr><td>INC001</td><td>Database connection timeout on prod-db-01</td><td>network</td><td><span class='badge' style='background:#dc2626'>critical</span></td><td>Database-Ops</td><td><code>MOCK-SNOW-001</code> <code>JIRA-001</code> <code>AZ-001</code></td><td>2026-04-28 08:15</td></tr>
+<tr><td>INC004</td><td>Network switch offline in DC rack B</td><td>network</td><td><span class='badge' style='background:#dc2626'>critical</span></td><td>Network-Team</td><td><code>MOCK-SNOW-002</code> <code>JIRA-002</code> <code>AZ-002</code></td><td>2026-04-28 15:45</td></tr>
+<tr><td>INC005</td><td>Ransomware signature detected on workstation</td><td>security</td><td><span class='badge' style='background:#dc2626'>critical</span></td><td>Security-Team</td><td><code>MOCK-SNOW-003</code> <code>JIRA-003</code> <code>AZ-003</code></td><td>2026-04-28 17:05</td></tr>
+<tr><td>INC002</td><td>Suspicious login attempts from unknown IP</td><td>security</td><td><span class='badge' style='background:#ea580c'>high</span></td><td>Security-Team</td><td><code>MOCK-SNOW-004</code> <code>JIRA-004</code> <code>AZ-004</code></td><td>2026-04-28 10:30</td></tr>
+<tr><td>INC003</td><td>Checkout service returning NullPointerException</td><td>app</td><td><span class='badge' style='background:#ea580c'>high</span></td><td>App-Dev-Team</td><td><code>MOCK-SNOW-005</code> <code>JIRA-005</code> <code>AZ-005</code></td><td>2026-04-28 13:00</td></tr>
+<tr><td>INC006</td><td>Payment gateway timeout - Stripe API 503</td><td>app</td><td><span class='badge' style='background:#ea580c'>high</span></td><td>App-Dev-Team</td><td><code>MOCK-SNOW-006</code> <code>JIRA-006</code> <code>AZ-006</code></td><td>2026-04-28 19:20</td></tr>
+<tr><td>INC008</td><td>Phishing email reported by 3 employees</td><td>security</td><td><span class='badge' style='background:#ea580c'>high</span></td><td>Security-Team</td><td><code>MOCK-SNOW-007</code> <code>JIRA-007</code> <code>AZ-007</code></td><td>2026-04-29 05:30</td></tr>
+<tr><td>INC009</td><td>API response slow - P95 latency 4.2s</td><td>network</td><td><span class='badge' style='background:#ea580c'>high</span></td><td>App-Dev-Team</td><td><code>MOCK-SNOW-008</code> <code>JIRA-008</code> <code>AZ-008</code></td><td>2026-04-29 07:00</td></tr>
+<tr><td>INC007</td><td>Intermittent packet loss on VLAN 30</td><td>network</td><td><span class='badge' style='background:#ca8a04'>medium</span></td><td>Network-Team</td><td><code>MOCK-SNOW-009</code> <code>JIRA-009</code> <code>AZ-009</code></td><td>2026-04-29 04:00</td></tr>
+<tr><td>INC011</td><td>Minor firewall rule misconfiguration found</td><td>network</td><td><span class='badge' style='background:#ca8a04'>medium</span></td><td>Security-Team</td><td><code>MOCK-SNOW-010</code> <code>JIRA-010</code> <code>AZ-010</code></td><td>2026-04-29 09:45</td></tr>
+<tr><td>INC012</td><td>DNS resolution intermittent on 10.2.0.0/16</td><td>network</td><td><span class='badge' style='background:#ca8a04'>medium</span></td><td>Network-Team</td><td><code>MOCK-SNOW-011</code> <code>JIRA-011</code> <code>AZ-011</code></td><td>2026-04-29 11:00</td></tr>
+<tr><td>INC010</td><td>Scheduled job failed - non-production env</td><td>app</td><td><span class='badge' style='background:#16a34a'>low</span></td><td>App-Dev-Team</td><td><code>MOCK-SNOW-012</code> <code>JIRA-012</code> <code>AZ-012</code></td><td>2026-04-29 08:15</td></tr></tbody></table><footer>IT Incident Auto-Triage & Tracker - B2.NET_Python_Batch_Mini_Project_3</footer></body></html>

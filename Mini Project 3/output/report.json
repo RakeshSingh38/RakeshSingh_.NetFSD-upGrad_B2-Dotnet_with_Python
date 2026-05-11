@@ -1,0 +1,186 @@
+{
+  "generated_at": "2026-05-01T15:55:38.330332+00:00",
+  "total": 12,
+  "incidents": [
+    {
+      "id": "INC001",
+      "title": "Database connection timeout on prod-db-01",
+      "description": "The primary production database prod-db-01 is unreachable. TCP connections are timing out on port 5432. All microservices depending on this DB are returning 503 errors.",
+      "reported_by": "monitoring-bot",
+      "timestamp": "2026-04-28T08:15:00+00:00",
+      "assigned_team": "Database-Ops",
+      "severity": "critical",
+      "incident_type": "network",
+      "ticket_ids": {
+        "snow": "MOCK-SNOW-001",
+        "jira": "JIRA-001",
+        "azure": "AZ-001"
+      }
+    },
+    {
+      "id": "INC004",
+      "title": "Network switch offline in DC rack B",
+      "description": "Core network switch SW-B04 in data center rack B has gone offline. VLAN 20 and VLAN 30 segments are down, affecting 14 servers. ICMP pings to 10.0.20.1 are failing.",
+      "reported_by": "netops-monitor",
+      "timestamp": "2026-04-28T15:45:00+00:00",
+      "assigned_team": "Network-Team",
+      "severity": "critical",
+      "incident_type": "network",
+      "ticket_ids": {
+        "snow": "MOCK-SNOW-002",
+        "jira": "JIRA-002",
+        "azure": "AZ-002"
+      }
+    },
+    {
+      "id": "INC005",
+      "title": "Ransomware signature detected on workstation",
+      "description": "Endpoint detection tool flagged ransomware signatures (WannaCry variant) on workstation DESK-114. Files are being encrypted. The machine has been isolated from the network.",
+      "reported_by": "edr-alert",
+      "timestamp": "2026-04-28T17:05:00+00:00",
+      "assigned_team": "Security-Team",
+      "severity": "critical",
+      "incident_type": "security",
+      "ticket_ids": {
+        "snow": "MOCK-SNOW-003",
+        "jira": "JIRA-003",
+        "azure": "AZ-003"
+      }
+    },
+    {
+      "id": "INC002",
+      "title": "Suspicious login attempts from unknown IP",
+      "description": "Over 500 failed SSH login attempts detected from source IP 185.220.101.42 in the last 10 minutes. Brute-force attack pattern identified by SIEM.",
+      "reported_by": "siem-alert",
+      "timestamp": "2026-04-28T10:30:00+00:00",
+      "assigned_team": "Security-Team",
+      "severity": "high",
+      "incident_type": "security",
+      "ticket_ids": {
+        "snow": "MOCK-SNOW-004",
+        "jira": "JIRA-004",
+        "azure": "AZ-004"
+      }
+    },
+    {
+      "id": "INC003",
+      "title": "Checkout service returning NullPointerException",
+      "description": "The checkout microservice is throwing a NullPointerException when processing cart items with promo codes. Error code NPE-4421. Stack trace logged in Splunk.",
+      "reported_by": "apm-alert",
+      "timestamp": "2026-04-28T13:00:00+00:00",
+      "assigned_team": "App-Dev-Team",
+      "severity": "high",
+      "incident_type": "app",
+      "ticket_ids": {
+        "snow": "MOCK-SNOW-005",
+        "jira": "JIRA-005",
+        "azure": "AZ-005"
+      }
+    },
+    {
+      "id": "INC006",
+      "title": "Payment gateway timeout - Stripe API 503",
+      "description": "The payment service is receiving HTTP-503 responses from the Stripe API gateway. All payment transactions are failing with timeout after 30 s. Error code: STRIPE-TIMEOUT-503.",
+      "reported_by": "payments-monitor",
+      "timestamp": "2026-04-28T19:20:00+00:00",
+      "assigned_team": "App-Dev-Team",
+      "severity": "high",
+      "incident_type": "app",
+      "ticket_ids": {
+        "snow": "MOCK-SNOW-006",
+        "jira": "JIRA-006",
+        "azure": "AZ-006"
+      }
+    },
+    {
+      "id": "INC008",
+      "title": "Phishing email reported by 3 employees",
+      "description": "Three employees received a phishing email impersonating the IT helpdesk, requesting password resets via a spoofed link. Source IP: 203.0.113.77. Email quarantined.",
+      "reported_by": "helpdesk",
+      "timestamp": "2026-04-29T05:30:00+00:00",
+      "assigned_team": "Security-Team",
+      "severity": "high",
+      "incident_type": "security",
+      "ticket_ids": {
+        "snow": "MOCK-SNOW-007",
+        "jira": "JIRA-007",
+        "azure": "AZ-007"
+      }
+    },
+    {
+      "id": "INC009",
+      "title": "API response slow - P95 latency 4.2s",
+      "description": "The product catalogue API is experiencing slow response times. P95 latency has increased to 4.2 seconds, up from the SLA threshold of 500 ms. No exception raised, but throughput degraded.",
+      "reported_by": "apm-alert",
+      "timestamp": "2026-04-29T07:00:00+00:00",
+      "assigned_team": "App-Dev-Team",
+      "severity": "high",
+      "incident_type": "network",
+      "ticket_ids": {
+        "snow": "MOCK-SNOW-008",
+        "jira": "JIRA-008",
+        "azure": "AZ-008"
+      }
+    },
+    {
+      "id": "INC007",
+      "title": "Intermittent packet loss on VLAN 30",
+      "description": "Network monitoring shows intermittent packet loss of 12-18% on VLAN 30 between 10.0.30.0/24 and the core router. UDP traffic is most affected. Degraded performance observed.",
+      "reported_by": "netops-monitor",
+      "timestamp": "2026-04-29T04:00:00+00:00",
+      "assigned_team": "Network-Team",
+      "severity": "medium",
+      "incident_type": "network",
+      "ticket_ids": {
+        "snow": "MOCK-SNOW-009",
+        "jira": "JIRA-009",
+        "azure": "AZ-009"
+      }
+    },
+    {
+      "id": "INC011",
+      "title": "Minor firewall rule misconfiguration found",
+      "description": "A security audit identified a misconfigured firewall rule that allows unrestricted inbound traffic on port 8080 from any source. Risk is low as the port is not currently exposed publicly.",
+      "reported_by": "security-audit",
+      "timestamp": "2026-04-29T09:45:00+00:00",
+      "assigned_team": "Security-Team",
+      "severity": "medium",
+      "incident_type": "network",
+      "ticket_ids": {
+        "snow": "MOCK-SNOW-010",
+        "jira": "JIRA-010",
+        "azure": "AZ-010"
+      }
+    },
+    {
+      "id": "INC012",
+      "title": "DNS resolution intermittent on 10.2.0.0/16",
+      "description": "Users on the 10.2.0.0/16 subnet are experiencing intermittent DNS resolution failures. The secondary DNS server at 10.2.0.2 appears unresponsive. Primary is healthy.",
+      "reported_by": "netops-monitor",
+      "timestamp": "2026-04-29T11:00:00+00:00",
+      "assigned_team": "Network-Team",
+      "severity": "medium",
+      "incident_type": "network",
+      "ticket_ids": {
+        "snow": "MOCK-SNOW-011",
+        "jira": "JIRA-011",
+        "azure": "AZ-011"
+      }
+    },
+    {
+      "id": "INC010",
+      "title": "Scheduled job failed - non-production env",
+      "description": "The nightly data-sync scheduled job failed in the staging environment due to a stale credentials error. No production impact. Job can be re-run manually.",
+      "reported_by": "scheduler-bot",
+      "timestamp": "2026-04-29T08:15:00+00:00",
+      "assigned_team": "App-Dev-Team",
+      "severity": "low",
+      "incident_type": "app",
+      "ticket_ids": {
+        "snow": "MOCK-SNOW-012",
+        "jira": "JIRA-012",
+        "azure": "AZ-012"
+      }
+    }
+  ]
+}
